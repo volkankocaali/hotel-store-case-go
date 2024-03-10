@@ -16,6 +16,5 @@ RUN apk del tzdata
 WORKDIR /root/
 COPY ./.env.dist ./.env
 COPY --from=builder /app/server-linux ./cmd/api/server
-COPY --from=builder /app/server-windows.exe ./cmd/api/server.exe
 EXPOSE 3000
 CMD ["./cmd/api/server"]
