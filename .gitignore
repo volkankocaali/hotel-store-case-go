@@ -5,8 +5,6 @@
 *.dylib
 
 vendor/
-/go.sum
-/go.mod
 
 *.log
 *.out
