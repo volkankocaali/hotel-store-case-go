@@ -1,0 +1,12 @@
+/bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+vendor/
+/go.sum
+/go.mod
+
+*.log
+*.out
