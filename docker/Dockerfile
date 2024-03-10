@@ -1,13 +1,10 @@
 # Builder stage
-FROM golang:latest as builder
+FROM golang:1.22-alpine as builder
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-# Linux için derleme
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server-linux ./cmd/api
-# Windows için derleme
-RUN CGO_ENABLED=0 GOOS=windows go build -a -installsuffix cgo -o server-windows.exe ./cmd/api
 
 # Runtime stage
 FROM alpine:latest

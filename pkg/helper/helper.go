@@ -2,7 +2,6 @@ package helper
 
 import (
 	"errors"
-	"fmt"
 	"github.com/golang-jwt/jwt"
 	"github.com/volkankocali/hotel-store-case-go/pkg/config"
 	"github.com/volkankocali/hotel-store-case-go/pkg/schema"
@@ -86,6 +85,5 @@ func (helper *Helper) ParseToken(tokenString string) (jwt.MapClaims, error) {
 		return nil, err
 	}
 
-	fmt.Println("claims", claims)
 	return claims, nil
 }
